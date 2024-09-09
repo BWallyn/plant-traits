@@ -1,5 +1,6 @@
 ipython>=8.10
 jupyterlab>=3.0
+kaggle>=1.6.17
 kedro~=0.19.7
 kedro-datasets>=3.0; python_version >= "3.9"
 kedro-datasets>=1.0; python_version < "3.9"
