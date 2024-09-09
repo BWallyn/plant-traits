@@ -6,7 +6,8 @@ generated using Kedro 0.19.8
 # ==== IMPORTS ====
 # =================
 
-import kaggle
+# import kaggle
+import pandas as pd
 from kaggle.api.kaggle_api_extended import KaggleApi
 
 # ===================
@@ -17,4 +18,5 @@ def download_data() -> pd.DataFrame:
     """
     """
     api = KaggleApi()
+    api.authenticate()
 
