@@ -1,0 +1,20 @@
+"""
+This is a boilerplate pipeline 'donwload_data'
+generated using Kedro 0.19.8
+"""
+# =================
+# ==== IMPORTS ====
+# =================
+
+import kaggle
+from kaggle.api.kaggle_api_extended import KaggleApi
+
+# ===================
+# ==== FUNCTIONS ====
+# ===================
+
+def download_data() -> pd.DataFrame:
+    """
+    """
+    api = KaggleApi()
+
