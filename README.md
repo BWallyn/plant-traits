@@ -1,12 +1,17 @@
-# plant-traits
+# Plant Traits
 
-## Overview
+[PlantTraits2024 Challenge](https://www.kaggle.com/competitions/planttraits2024) is designed to work on the understanding of the global patterns of biodiversity. The goal is to predict a broad set of 6 plant traits (e.g. leaf area, plant height) from crowd-sourced plant images and some ancillary data.
+
+
+## Kedro
+
+### Overview
 
 This is your new Kedro project with Kedro-Viz setup, which was generated using `kedro 0.19.7`.
 
 Take a look at the [Kedro documentation](https://docs.kedro.org) to get started.
 
-## Rules and guidelines
+### Rules and guidelines
 
 In order to get the best out of the template:
 
@@ -15,7 +20,7 @@ In order to get the best out of the template:
 * Don't commit data to your repository
 * Don't commit any credentials or your local configuration to your repository. Keep all your credentials and local configuration in `conf/local/`
 
-## How to install dependencies
+### How to install dependencies
 
 Declare any dependencies in `requirements.txt` for `pip` installation.
 
@@ -25,7 +30,7 @@ To install them, run:
 pip install -r requirements.txt
 ```
 
-## How to run your Kedro pipeline
+### How to run your Kedro pipeline
 
 You can run your Kedro project with:
 
@@ -33,7 +38,7 @@ You can run your Kedro project with:
 kedro run
 ```
 
-## How to test your Kedro project
+### How to test your Kedro project
 
 Have a look at the files `src/tests/test_run.py` and `src/tests/pipelines/data_science/test_pipeline.py` for instructions on how to write your tests. Run the tests as follows:
 
@@ -43,19 +48,19 @@ pytest
 
 To configure the coverage threshold, look at the `.coveragerc` file.
 
-## Project dependencies
+### Project dependencies
 
 To see and update the dependency requirements for your project use `requirements.txt`. Install the project requirements with `pip install -r requirements.txt`.
 
 [Further information about project dependencies](https://docs.kedro.org/en/stable/kedro_project_setup/dependencies.html#project-specific-dependencies)
 
-## How to work with Kedro and notebooks
+### How to work with Kedro and notebooks
 
 > Note: Using `kedro jupyter` or `kedro ipython` to run your notebook provides these variables in scope: `catalog`, `context`, `pipelines` and `session`.
 >
 > Jupyter, JupyterLab, and IPython are already included in the project requirements by default, so once you have run `pip install -r requirements.txt` you will not need to take any extra steps before you use them.
 
-### Jupyter
+#### Jupyter
 To use Jupyter notebooks in your Kedro project, you need to install Jupyter:
 
 ```
