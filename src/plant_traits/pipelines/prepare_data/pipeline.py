@@ -5,7 +5,7 @@ generated using Kedro 0.19.8
 
 from kedro.pipeline import Pipeline, node, pipeline
 
-from plant_traits.pipelines.feature_engineering.nodes import (
+from plant_traits.pipelines.prepare_data.nodes import (
     add_path_to_images,
     split_train_test,
 )
