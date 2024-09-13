@@ -1,6 +1,6 @@
 df_raw:
   type: pandas.CSVDataset
-  filepath: data/03_raw/train.csv
+  filepath: data/03_primary/train.csv
 
 
 df_train:
