@@ -8,6 +8,10 @@ generated using Kedro 0.19.8
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
+from tqdm.notebook import tqdm
+
+# Options
+tqdm.pandas()
 
 # ===================
 # ==== FUNCTIONS ====
@@ -22,7 +26,19 @@ def add_path_to_images(df: pd.DataFrame, path_images: str) -> pd.DataFrame:
     Returns:
         df (pd.DataFrame): Output dataframe with path to images
     """
-    df['file_path'] = df['id'].apply(lambda s: f'{path_images}/train_images/{s}.jpeg')
+    df['file_path'] = df['id'].apply(lambda s: f'{path_images}/{s}.jpeg')
+    return df
+
+
+def add_jpeg_bytes(df: pd.DataFrame) -> pd.DataFrame:
+    """Add the image as a bytes in a new column named jpeg_bytes
+
+    Args:
+        df (pd.DataFrame): Input dataframe
+    Returns:
+        df (pd.DataFrame): Output dataframe with the new column
+    """
+    df['jpeg_bytes'] = df['file_path'].progress_apply(lambda fp: open(fp, 'rb').read())
     return df
 
 
