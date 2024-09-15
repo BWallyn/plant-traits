@@ -46,3 +46,6 @@ attr = "plant_traits.__version__"
 [tool.setuptools.packages.find]
 where = [ "src",]
 namespaces = false
+
+[tool.kedro_telemetry]
+project_id = "7a16e14dc12c4256a4ff2ffa3045b222"
