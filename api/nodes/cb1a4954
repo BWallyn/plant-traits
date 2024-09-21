@@ -1,0 +1,12 @@
+{
+  "code": "def add_jpeg_bytes(df: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"Add the image as a bytes in a new column named jpeg_bytes\n\n    Args:\n        df (pd.DataFrame): Input dataframe\n    Returns:\n        df (pd.DataFrame): Output dataframe with the new column\n    \"\"\"\n    df['jpeg_bytes'] = df['file_path'].progress_apply(lambda fp: open(fp, 'rb').read())\n    return df\n",
+  "filepath": "plant-traits/src/plant_traits/pipelines/prepare_data/nodes.py",
+  "parameters": {},
+  "run_command": "kedro run --to-nodes='prepare_data.add_image_as_jpeg_bytes'",
+  "inputs": [
+    "prepare_data.df_w_path"
+  ],
+  "outputs": [
+    "prepare_data.df_w_jpeg"
+  ]
+}

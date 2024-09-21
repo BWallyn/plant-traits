@@ -1,0 +1,13 @@
+{
+  "code": "def split_train_test(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:\n    \"\"\"Split the dataset into train and test\n\n    Args:\n        df (pd.DataFrame): Input dataframe\n    Returns:\n        df_train (pd.DataFrame): Training dataframe\n        df_test (pd.DataFrame): Test dataframe\n    \"\"\"\n    df_train, df_test = train_test_split(df, test_size=0.2, shuffle=True, random_state=12)\n    return df_train, df_test\n",
+  "filepath": "plant-traits/src/plant_traits/pipelines/prepare_data/nodes.py",
+  "parameters": {},
+  "run_command": "kedro run --to-nodes='prepare_data.split_data_train_validation'",
+  "inputs": [
+    "prepare_data.df_w_jpeg"
+  ],
+  "outputs": [
+    "df_train",
+    "df_valid"
+  ]
+}

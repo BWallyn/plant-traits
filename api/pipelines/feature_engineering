@@ -1,0 +1,34 @@
+{
+  "nodes": [],
+  "edges": [],
+  "layers": [],
+  "tags": [],
+  "pipelines": [
+    {
+      "id": "__default__",
+      "name": "__default__"
+    },
+    {
+      "id": "donwload_data",
+      "name": "donwload_data"
+    },
+    {
+      "id": "feature_engineering",
+      "name": "feature_engineering"
+    },
+    {
+      "id": "prepare_data",
+      "name": "prepare_data"
+    }
+  ],
+  "modular_pipelines": {
+    "__root__": {
+      "id": "__root__",
+      "name": "__root__",
+      "inputs": [],
+      "outputs": [],
+      "children": []
+    }
+  },
+  "selected_pipeline": "feature_engineering"
+}

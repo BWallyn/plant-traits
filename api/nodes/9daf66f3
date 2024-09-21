@@ -1,0 +1,5 @@
+{
+  "parameters": {
+    "prepare_data.path_images": "data/03_primary/train_images/"
+  }
+}

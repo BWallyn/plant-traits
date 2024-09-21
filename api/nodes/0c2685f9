@@ -1,0 +1,8 @@
+{
+  "type": "pandas.csv_dataset.CSVDataset",
+  "filepath": "/home/runner/work/plant-traits/plant-traits/data/03_primary/train.csv",
+  "run_command": null,
+  "preview": null,
+  "preview_type": null,
+  "stats": null
+}

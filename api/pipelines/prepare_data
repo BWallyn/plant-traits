@@ -1,0 +1,290 @@
+{
+  "nodes": [
+    {
+      "id": "9b4b9243",
+      "name": "add_path_to_images",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "prepare_data"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "prepare_data"
+      ],
+      "parameters": {
+        "prepare_data.path_images": "data/03_primary/train_images/"
+      }
+    },
+    {
+      "id": "0c2685f9",
+      "name": "df_raw",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "prepare_data"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "prepare_data"
+      ],
+      "layer": null,
+      "dataset_type": "pandas.csv_dataset.CSVDataset",
+      "stats": null
+    },
+    {
+      "id": "9daf66f3",
+      "name": "params:prepare_data.path_images",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "prepare_data"
+      ],
+      "type": "parameters",
+      "modular_pipelines": null,
+      "layer": null,
+      "dataset_type": null,
+      "stats": null
+    },
+    {
+      "id": "245df31a",
+      "name": "prepare_data.df_w_path",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "prepare_data"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "prepare_data"
+      ],
+      "layer": null,
+      "dataset_type": "io.memory_dataset.MemoryDataset",
+      "stats": null
+    },
+    {
+      "id": "cb1a4954",
+      "name": "add_image_as_jpeg_bytes",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "prepare_data"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "prepare_data"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "f97d98e3",
+      "name": "prepare_data.df_w_jpeg",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "prepare_data"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "prepare_data"
+      ],
+      "layer": null,
+      "dataset_type": "io.memory_dataset.MemoryDataset",
+      "stats": null
+    },
+    {
+      "id": "7f3ff64b",
+      "name": "split_data_train_validation",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "prepare_data"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "prepare_data"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "27e06b17",
+      "name": "df_train",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "prepare_data"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "prepare_data"
+      ],
+      "layer": null,
+      "dataset_type": "pandas.parquet_dataset.ParquetDataset",
+      "stats": null
+    },
+    {
+      "id": "580ae6c5",
+      "name": "df_valid",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "prepare_data"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "prepare_data"
+      ],
+      "layer": null,
+      "dataset_type": "pandas.parquet_dataset.ParquetDataset",
+      "stats": null
+    },
+    {
+      "id": "prepare_data",
+      "name": "prepare_data",
+      "tags": [],
+      "pipelines": [
+        "prepare_data"
+      ],
+      "type": "modularPipeline",
+      "modular_pipelines": null,
+      "layer": null,
+      "dataset_type": null,
+      "stats": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "prepare_data",
+      "target": "27e06b17"
+    },
+    {
+      "source": "cb1a4954",
+      "target": "f97d98e3"
+    },
+    {
+      "source": "0c2685f9",
+      "target": "prepare_data"
+    },
+    {
+      "source": "9daf66f3",
+      "target": "prepare_data"
+    },
+    {
+      "source": "9b4b9243",
+      "target": "245df31a"
+    },
+    {
+      "source": "0c2685f9",
+      "target": "9b4b9243"
+    },
+    {
+      "source": "245df31a",
+      "target": "cb1a4954"
+    },
+    {
+      "source": "9daf66f3",
+      "target": "9b4b9243"
+    },
+    {
+      "source": "7f3ff64b",
+      "target": "580ae6c5"
+    },
+    {
+      "source": "f97d98e3",
+      "target": "7f3ff64b"
+    },
+    {
+      "source": "prepare_data",
+      "target": "580ae6c5"
+    },
+    {
+      "source": "7f3ff64b",
+      "target": "27e06b17"
+    }
+  ],
+  "layers": [],
+  "tags": [],
+  "pipelines": [
+    {
+      "id": "__default__",
+      "name": "__default__"
+    },
+    {
+      "id": "donwload_data",
+      "name": "donwload_data"
+    },
+    {
+      "id": "feature_engineering",
+      "name": "feature_engineering"
+    },
+    {
+      "id": "prepare_data",
+      "name": "prepare_data"
+    }
+  ],
+  "modular_pipelines": {
+    "__root__": {
+      "id": "__root__",
+      "name": "__root__",
+      "inputs": [],
+      "outputs": [],
+      "children": [
+        {
+          "id": "580ae6c5",
+          "type": "data"
+        },
+        {
+          "id": "27e06b17",
+          "type": "data"
+        },
+        {
+          "id": "0c2685f9",
+          "type": "data"
+        },
+        {
+          "id": "9daf66f3",
+          "type": "parameters"
+        },
+        {
+          "id": "prepare_data",
+          "type": "modularPipeline"
+        }
+      ]
+    },
+    "prepare_data": {
+      "id": "prepare_data",
+      "name": "prepare_data",
+      "inputs": [
+        "9daf66f3",
+        "0c2685f9"
+      ],
+      "outputs": [
+        "27e06b17",
+        "580ae6c5"
+      ],
+      "children": [
+        {
+          "id": "245df31a",
+          "type": "data"
+        },
+        {
+          "id": "9b4b9243",
+          "type": "task"
+        },
+        {
+          "id": "cb1a4954",
+          "type": "task"
+        },
+        {
+          "id": "7f3ff64b",
+          "type": "task"
+        },
+        {
+          "id": "f97d98e3",
+          "type": "data"
+        }
+      ]
+    }
+  },
+  "selected_pipeline": "prepare_data"
+}
