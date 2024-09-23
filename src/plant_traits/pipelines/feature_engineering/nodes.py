@@ -100,3 +100,10 @@ def build_decoder(target_size: tuple[int], num_classes: int, aux_num_classes: in
         return (inp, (label, aux_label))
 
     return decode_with_labels if with_labels else decode_image
+
+
+def build_dataset(
+    path: str,
+) -> tf.data.Dataset:
+    """
+    """
